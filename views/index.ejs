@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <title>Погода-Node JS APP</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <h1>Погода в любой точке мира сейчас:</h1>
+      <div class="app__header">
+        <h4><%=date.toLocaleString()%></h4>
+        <% if(weather) {%>
+          <h2><%=place%></h2>
+          
+        <h3><%=weather%></h3>
+        <%}%> <% if(error) {%>
+        <p class="error"><%=error%></p>
+        <%}%>
+      </div>
+      <form action="/" method="POST" class="app__content">
+        <div class="input">
+          <label for="city">Введите название населенного пункта</label>
+          <input
+            type="text"
+            id="city"
+            placeholder="Название "
+            name="city"
+          />
+        </div>
+        <button type="submit" class="btn">Показать погоду</button>
+      </form>
+    </div>
+  </body>
+</html>
